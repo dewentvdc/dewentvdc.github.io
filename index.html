@@ -2,91 +2,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dewen TV DC - Noticias y Entretenimiento</title>
-  <meta name="google-site-verification" content="XnT7_jpAIBg0pJAZEXlXFm1hUk8tCZ49NW3apRGP43E" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Noticias, entretenimiento, deportes y más en Dewen TV DC. Tu canal digital colombiano." />
-  <meta name="keywords" content="noticias colombia, entretenimiento, deportes, videos virales, dewenvdc, farándula, actualidad" />
-
-  <!-- Open Graph (Facebook, WhatsApp) -->
-  <meta property="og:title" content="Dewen TV DC - Noticias y Entretenimiento" />
-  <meta property="og:description" content="Disfruta de noticias, deportes y farándula en Dewen TV DC. ¡Conéctate con lo mejor de Colombia!" />
-  <meta property="og:image" content="logo_dewen.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dewentvdc.github.io/" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dewen TV DC - Noticias y Entretenimiento" />
-  <meta name="twitter:description" content="Disfruta de noticias, deportes y farándula en Dewen TV DC. ¡Conéctate con lo mejor de Colombia!" />
-  <meta name="twitter:image" content="logo_dewen.png" />
-
-  <link rel="icon" href="logo_dewen.png" type="image/png" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #222;
-    }
-    iframe {
-      max-width: 100%;
-      height: 360px;
-      border: none;
-    }
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Dewen TV DC" />
+    <meta property="og:description" content="Noticias, entretenimiento y videos virales con Dewen TV DC." />
+    <meta property="og:image" content="logo_dewen.png" />
+    <meta property="og:url" content="https://dewentvdc.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Dewen TV DC</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        header { background-color: #007bff; color: white; padding: 1em; text-align: center; }
+        section { padding: 2em; }
+        h2 { color: #007bff; }
+        .video-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        iframe, .fb-video { width: 100%; max-width: 400px; height: 225px; border: none; }
+        .video-block { max-width: 400px; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Dewen TV DC</h1>
-    <p>Noticias y entretenimiento colombiano</p>
-  </header>
-  <main>
+    <header>
+        <img src="logo_dewen.png" alt="Logo Dewen TV DC" style="height:60px;">
+        <h1>Dewen TV DC</h1>
+        <p>Noticias, entretenimiento y más</p>
+    </header>
+
     <section>
-      <h2>📰 Noticias</h2>
-      <p>Colombia avanza en su reforma educativa con nuevas propuestas para estudiantes de zonas rurales.</p>
+        <h2>Videos Destacados</h2>
+        <div class="video-container">
+            <div class="video-block">
+                <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/1CNECS2Zzp/" allowfullscreen></iframe>
+            </div>
+            <div class="video-block">
+                <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/15iBksBkbu/" allowfullscreen></iframe>
+            </div>
+            <div class="video-block">
+                <iframe src="https://www.youtube.com/embed/LS-aCSUuCuw" allowfullscreen></iframe>
+            </div>
+        </div>
     </section>
-    <section>
-      <h2>⚽ Deportes</h2>
-      <p>La Selección Colombia Sub-20 femenina se prepara para el Mundial con nuevo cuerpo técnico.</p>
-    </section>
-    <section>
-      <h2>🎭 Entretenimiento</h2>
-      <p>La telenovela “Café con Aroma de Mujer” vuelve a tener éxito en plataformas digitales.</p>
-    </section>
-    <section>
-      <h2>🔥 Video destacado</h2>
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/747176121107939&show_text=false&width=500" width="500" height="280" allowfullscreen></iframe>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Dewen TV DC. Todos los derechos reservados.</p>
-  </footer>
 </body>
 </html>
