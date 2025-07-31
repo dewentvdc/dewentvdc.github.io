@@ -2,34 +2,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="XnT7_jpAIBg0pJAZEXlXFm1hUk8tCZ49NW3apRGP43E" />
-    <title>Dewen TV DC</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asistente y Generador IA - Dewen TV DC</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #00bfff;
+    }
+    .formulario {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+    }
+    label, select, textarea, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+    select, textarea {
+      background: #222;
+      color: white;
+      border: 1px solid #00bfff;
+      padding: 10px;
+    }
+    button {
+      background-color: #00bfff;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .descargar-btn {
+      margin-top: 10px;
+      background-color: #00bfff;
+      color: #000;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chatbot-burbuja {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00bfff;
+      color: #000;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Dewen TV DC</h1>
-        <nav>
-            <a href="https://www.facebook.com/people/Dewen-Tv-Dc/100087328080035/" target="_blank">Facebook</a>
-            <a href="https://youtube.com/@clasicocars_21?si=wJwofGsnQ9Dq7pkR" target="_blank">YouTube</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Noticia Impactante</h2>
-            <p>Un dato curioso que pocos conocen: hay una persona que sobrevivió a las dos bombas atómicas lanzadas en Hiroshima y Nagasaki.</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/LS-aCSUuCuw" frameborder="0" allowfullscreen></iframe>
-        </section>
-        <section>
-            <h2>Video de Entretenimiento</h2>
-            <p>Reel popular de Facebook:</p>
-            <a href="https://www.facebook.com/share/r/1AunNLFuXn/" target="_blank">Ver Reel en Facebook</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Dewen TV DC</p>
-    </footer>
+  <h1>Generador IA Dewen</h1>
+  <div class="formulario">
+    <label for="prompt">Escribe tu idea o pregunta:</label>
+    <textarea id="prompt" rows="3" placeholder="Ej: Dame una imagen de un dragón en el espacio..."></textarea>
+
+    <label for="tipo">Selecciona el tipo de contenido:</label>
+    <select id="tipo">
+      <option value="texto">Texto</option>
+      <option value="imagen">Imagen</option>
+      <option value="video">Video</option>
+    </select>
+
+    <button onclick="generarContenido()">Generar</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <div class="chatbot-burbuja" onclick="hablarChatbot()">
+    💬
+  </div>
+
+  <script>
+    async function generarContenido() {
+      const prompt = document.getElementById("prompt").value;
+      const tipo = document.getElementById("tipo").value;
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = "⏳ Generando...";
+
+      try {
+        const res = await fetch("/api/openai", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ prompt, type: tipo })
+        });
+
+        const data = await res.json();
+        if (tipo === "texto") {
+          resultado.innerHTML = `📜 <strong>Texto generado:</strong><br><p>${data.result}</p>
+            <button class='descargar-btn' onclick='descargarTexto("${data.result}")'>Descargar</button>`;
+        } else if (tipo === "imagen") {
+          resultado.innerHTML = `<strong>Imagen generada:</strong><br>
+            <img src='${data.result}' alt='IA Imagen' width='300'/><br>
+            <a class='descargar-btn' href='${data.result}' download>Descargar</a>`;
+        } else {
+          resultado.innerHTML = `<strong>Video:</strong><br>La generación de video aún está en desarrollo.`;
+        }
+      } catch (error) {
+        resultado.innerHTML = "❌ Error al generar contenido. Intenta nuevamente.";
+        console.error(error);
+      }
+    }
+
+    function hablarChatbot() {
+      const frase = "Hola, soy tu asistente virtual. ¿En qué puedo ayudarte hoy?";
+      const utterance = new SpeechSynthesisUtterance(frase);
+      speechSynthesis.speak(utterance);
+      alert(frase);
+    }
+
+    function descargarTexto(texto) {
+      const blob = new Blob([texto], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "contenido.txt";
+      link.click();
+    }
+  </script>
 </body>
 </html>
