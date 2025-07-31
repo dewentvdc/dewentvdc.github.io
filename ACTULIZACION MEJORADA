@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewen TV DC</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; padding: 20px; }
+        header, footer { background: #111; color: white; text-align: center; padding: 1em 0; }
+        h1 { color: #d62; }
+        section { margin: 20px 0; }
+        .video-container { margin: 10px 0; }
+        iframe { width: 100%; max-width: 560px; height: 315px; }
+        .social-links a { margin: 0 10px; text-decoration: none; color: white; }
+        .social-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dewen TV DC</h1>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/r/1AunNLFuXn/" target="_blank">Facebook</a>
+            <a href="https://youtube.com/@clasicocars_21?si=wJwofGsnQ9Dq7pkR" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Últimas Noticias</h2>
+        <p>🌎 Julio 2025 fue el mes más caluroso jamás registrado, según la NOAA.</p>
+    </section>
+
+    <section>
+        <h2>Dato Curioso</h2>
+        <p>🧠 El cerebro humano genera 20 vatios, suficiente para encender una bombilla pequeña.</p>
+    </section>
+
+    <section>
+        <h2>Deportes</h2>
+        <p>⚽ Colombia venció 2-1 a Brasil en un partidazo rumbo al Mundial 2026.</p>
+    </section>
+
+    <section>
+        <h2>Videos Populares</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/LS-aCSUuCuw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ANKPsCTh0Og" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/itnqEauWQZM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/zAGVQLHvwOY" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dewen TV DC</p>
+    </footer>
+</body>
+</html>
